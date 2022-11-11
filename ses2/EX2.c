@@ -18,6 +18,7 @@ int** dummy(int** x,int n)
 			j++;
 		}
 	}
+
 	i++;
 	y[n]=x[0];
 	return(y);

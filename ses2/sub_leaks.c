@@ -21,7 +21,15 @@ int **dummy(int **x, int n)
 		}
 		i++;
 	}
+
 	y[n] = x[0];
+	i = 1;
+	while(i < n)
+	{
+		free(x[i]);
+		i++;
+	}
+	free(x);
 	return(y);
 }
 
@@ -57,6 +65,7 @@ int main()
 			j++;
 		}
 		printf("\n");
+		free(y[i]);
 		i++;
 	}
 }

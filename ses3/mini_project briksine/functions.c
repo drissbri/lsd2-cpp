@@ -2,7 +2,6 @@
 
 /* main function */
 char	*read_lines(int fd)
-{
 	static t_list *stash = NULL;
 	char	*line;
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &line, 0) < 0)
