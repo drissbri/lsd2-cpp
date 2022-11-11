@@ -2,6 +2,7 @@
 
 /* main function */
 char	*read_lines(int fd)
+{
 	static t_list *stash = NULL;
 	char	*line;
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &line, 0) < 0)
@@ -134,7 +135,7 @@ void	extract_line(t_list *stash, char **line)
 
 /* After extracting the line that was read, we don't need those characters
  * anymore. This function clears the stash so only the characters that have
- * not been returned at the end of get_next_line remain in our static stash. */
+ * not been returned at the end of read_lines remain in our static stash. */
 
 void	clean_stash(t_list **stash)
 {
